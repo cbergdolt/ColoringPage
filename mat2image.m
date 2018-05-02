@@ -5,15 +5,18 @@
 % their lab [Contour Detection and Hierarchical Image Segmentation. P. Arbelaez, M. Maire, C. Fowlkes and J. Malik. IEEE TPAMI, Vol. 33, No. 5, pp. 898-916, May 2011.]
 
 %%
-I = load('12003.mat');
+img_no = '12003';
+I = load(strcat('mats_contourMaps/',img_no,'.mat'));
 img = I.ucm2;
 
 %invert values in m so the segment boundaries are black instead of white
 img_invert = (img-1).*(-1);
 
-%display/save the images
-figure(1)
-imshow (img_invert);
-imwrite(img_invert, 'output/contour_map.jpg');
-figure(2)
-imshow(img);
+%display the images
+% figure(1)
+% imshow (img_invert);
+% figure(2)
+% imshow(img);
+
+%save the inverted image
+imwrite(img_invert, strcat('output/contour_maps/',img_no,'.jpg'));
