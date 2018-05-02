@@ -1,0 +1,12 @@
+function out = invert(in)
+
+end
+
+%%
+I = load('12003.mat');
+m = I.ucm2;
+whos m
+%disp(m);
+%invert values in m
+n = arrayfun(
+imshow (m);
